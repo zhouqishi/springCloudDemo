@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: dashboard-service
+
+server:
+  port: 9003
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"
