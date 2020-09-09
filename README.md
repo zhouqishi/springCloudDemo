@@ -6,7 +6,7 @@ spring cloud 全家桶demo工程
 3. 使用dashboard做服务监控
    访问url：http://localhost:9003/hystrix，访问管理平台
    输入：http://localhost:9002/actuator/hystrix.stream，监控某个应用的流量情况
-4. 使用zipkin做链路跟踪
+4. 使用sleuth + zipkin做链路跟踪
    zipkin server在zipkin文件夹下，暂时为jar，启动命令 java -jar zipkin-server-2.21.7-exec.jar
 5. usercenter为简版的用户中心
    http://127.0.0.1:9002/user/get
