@@ -25,10 +25,11 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    </dependency>
+<!--      注册中心-->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
@@ -47,10 +48,11 @@
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
     <!-- Sends trace data to zipkin over http (defaults to http://localhost:9411/api/v2/spans) -->
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-zipkin</artifactId>
-    </dependency>
+<!--    链路跟踪-->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-zipkin</artifactId>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter</artifactId>
@@ -105,6 +107,32 @@
       <artifactId>lombok</artifactId>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>druid</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
+    <dependency>
+      <groupId>org.mybatis.spring.boot</groupId>
+      <artifactId>mybatis-spring-boot-starter</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+    <dependency>
+      <groupId>org.mybatis</groupId>
+      <artifactId>mybatis</artifactId>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+    <dependency>
+      <groupId>com.alibaba</groupId>
+      <artifactId>fastjson</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -155,6 +183,19 @@
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
         </plugin>
+          <plugin>
+              <groupId>org.mybatis.generator</groupId>
+              <artifactId>mybatis-generator-maven-plugin</artifactId>
+              <version>1.4.0</version>
+              <dependencies>
+                  <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+                  <dependency>
+                      <groupId>mysql</groupId>
+                      <artifactId>mysql-connector-java</artifactId>
+                      <version>5.1.49</version>
+                  </dependency>
+              </dependencies>
+          </plugin>
       </plugins>
     </pluginManagement>
   </build>
