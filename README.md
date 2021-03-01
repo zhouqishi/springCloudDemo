@@ -10,3 +10,7 @@ spring cloud 全家桶demo工程
    zipkin server在zipkin文件夹下，暂时为jar，启动命令 java -jar zipkin-server-2.21.7-exec.jar
 5. usercenter为简版的用户中心
    http://127.0.0.1:9002/user/get
+
+
+注意： 注册中心Eureka在2.0版本之后宣布闭源了，容错组件Hystrix、网关组件Zuul也已经宣布停止维护了。
+todo 后续考虑将eureka，及hystrix切换

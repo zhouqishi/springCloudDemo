@@ -13,6 +13,7 @@
     <module>gateway</module>
     <module>usercenter</module>
     <module>dashboard</module>
+    <module>distributed-lock</module>
   </modules>
 
   <name>springCloudDemo</name>
