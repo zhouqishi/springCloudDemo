@@ -8,6 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author yuanxiu
@@ -17,12 +21,24 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/user")
 public class UserController {
 
+    ExecutorService executorService = new ThreadPoolExecutor(5, 5,
+            1, TimeUnit.MINUTES, new ArrayBlockingQueue<>(100));
+
+
     @GetMapping("/get")
     @HystrixCommand(fallbackMethod = "defaultGet")
     public UserVO get() {
         UserVO userVO = new UserVO();
         userVO.setUsername("anonymous");
         userVO.setPassword("");
+
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("当前线程id: " + Thread.currentThread().getId());
+            }
+        });
+
         return userVO;
     }
 

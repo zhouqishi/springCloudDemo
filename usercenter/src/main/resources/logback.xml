@@ -18,7 +18,7 @@
     <!-- 文件日志：输出全部日志到文件 -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/output.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${LOG_HOME}/info.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>7</maxHistory>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -39,21 +39,6 @@
             <level>WARN</level>
         </filter>
     </appender>
-
-    <!-- 独立输出的同步日志 -->
-    <appender name="SYNC_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_HOME}/sync.%d{yyyy-MM-dd}.log</fileNamePattern>
-            <maxHistory>7</maxHistory>
-        </rollingPolicy>
-        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>${ENCODER_PATTERN}</pattern>
-        </encoder>
-    </appender>
-
-    <logger name="log.sync" level="DEBUG" addtivity="true">
-        <appender-ref ref="SYNC_FILE"/>
-    </logger>
 
     <root>
         <level value="INFO"/>

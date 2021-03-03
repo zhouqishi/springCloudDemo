@@ -19,6 +19,7 @@ public class UserService {
     @Autowired
     private StoneUserMapper userMapper;
 
+    @Transactional
     public StoneUser selectById(Integer id, String userName) {
         StoneUser userDO = userMapper.selectByPrimaryKey(id);
         log.info("UserService.selectById result = {}", JSONObject.toJSON(userDO));
